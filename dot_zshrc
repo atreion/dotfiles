@@ -1,11 +1,3 @@
-# Prevent Apple Terminal from using Oh My Posh as it is not supported
-# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  # Add Oh My Posh prompt
-  # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/pure.omp.json)" 
-  # Remove first newline when terminal is cleared
-  # bindkey -s '^L' 'clear^M'
-# fi
-
 # Load starship prompt
 eval "$(starship init zsh)"
 
@@ -27,6 +19,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit light lukechilds/zsh-nvm
 
 # Add snippets
 zinit snippet OMZP::git
@@ -76,9 +69,10 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Env variables
-export BAT_THEME="onedark"
 export PATH=$PATH:$HOME/go/bin
 export PATH="${HOME}/.local/bin":${PATH}
+export VISUAL=nvim
+export EDITOR=nvim
 
 # ripgrep->fzf->vim [QUERY]
 rfv() (
