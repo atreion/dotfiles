@@ -4,3 +4,4 @@ font-family = "JetBrainsMono Nerd Font"
 font-size = 15
 font-feature = "-calt, -liga, -dlig"
 adjust-cell-height = 10%
+cursor-invert-fg-bg = true
