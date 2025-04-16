@@ -1,5 +1,5 @@
 macos-titlebar-proxy-icon = hidden
-theme = Kanagawa Wave
+theme = catppuccin-mocha
 font-family = "JetBrainsMono Nerd Font"
 font-size = 15
 font-feature = "-calt, -liga, -dlig"
