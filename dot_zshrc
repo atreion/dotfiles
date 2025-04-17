@@ -1,5 +1,9 @@
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh)"
+fi
+
 # Load starship prompt
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 
 # Add apps installed with homebrew to the PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
