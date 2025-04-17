@@ -1,9 +1,6 @@
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh)"
+  eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/emodipt-extend-custom.omp.json)"
 fi
-
-# Load starship prompt
-#eval "$(starship init zsh)"
 
 # Add apps installed with homebrew to the PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
