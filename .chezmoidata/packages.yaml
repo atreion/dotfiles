@@ -2,5 +2,7 @@ packages:
   darwin:
     brews:
       - "git"
+      - "fzf"
+      - "ripgrep"
     casks:
-    # - 'google-chrome'
+      - "font-jetbrains-mono-nerd-font"
