@@ -2,8 +2,11 @@
 #!/bin/bash
 
 brew bundle --file=/dev/stdin <<EOF
-brew "git"
-brew "fzf"
-cask "font-jetbrains-mono-nerd-font"
+{{ range .packages.darwin.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ range .packages.darwin.casks -}}
+cask {{ . | quote }}
+{{ end -}}
 EOF
 {{ end -}}
