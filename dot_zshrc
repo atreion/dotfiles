@@ -15,6 +15,16 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Env variables
+export PATH=$PATH:$HOME/go/bin
+export PATH="${HOME}/.local/bin":${PATH}
+export VISUAL=nvim
+export EDITOR=nvim
+export BAT_THEME="onedark"
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -64,12 +74,6 @@ alias lx='eza -lbhHigUmuSa@'
 alias lt='eza --tree $eza_params'
 alias tree='eza --tree $eza_params'
 
-# Env variables
-export PATH=$PATH:$HOME/go/bin
-export PATH="${HOME}/.local/bin":${PATH}
-export VISUAL=nvim
-export EDITOR=nvim
-export BAT_THEME="onedark"
 
 # ripgrep->fzf->vim [QUERY]
 rfv() (
