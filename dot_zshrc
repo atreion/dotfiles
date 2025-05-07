@@ -20,7 +20,7 @@ export PATH=$PATH:$HOME/go/bin
 export PATH="${HOME}/.local/bin":${PATH}
 export VISUAL=nvim
 export EDITOR=nvim
-export BAT_THEME="onedark"
+export BAT_THEME="tokyonight_moon"
 
 # Load nvm
 export NVM_DIR="$HOME/.nvm"
