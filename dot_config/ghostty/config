@@ -1,7 +1,7 @@
 macos-titlebar-style = tabs
-theme  = tokyonight_moon
 font-family = JetBrainsMono Nerd Font Mono
-font-feature = "-calt, -liga, -dlig"
-window-padding-balance = true
+font-size = 15
 mouse-hide-while-typing = true
-cursor-invert-fg-bg = true
+theme = dark:tokyonight-storm, light:tokyonight-day
+confirm-close-surface = false
+#font-feature = "-calt, -liga, -dlig"
