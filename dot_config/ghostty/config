@@ -4,4 +4,5 @@ font-size = 15
 mouse-hide-while-typing = true
 theme = dark:tokyonight-storm, light:tokyonight-day
 confirm-close-surface = false
+window-padding-balance = true
 #font-feature = "-calt, -liga, -dlig"
