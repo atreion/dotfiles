@@ -1,8 +1,20 @@
 packages:
   darwin:
     brews:
-      - "git"
+      - "bash"
+      - "bat"
+      - "eza"
+      - "fd"
       - "fzf"
+      - "git"
+      - "pandoc"
+      - "powerlevel10k"
       - "ripgrep"
+      - "zoxide"
+      - "zsh-autosuggestions"
+      - "zsh-completions"
+      - "zsh-syntax-highlighting"
     casks:
       - "font-jetbrains-mono-nerd-font"
+      - "font-meslo-lg-nerd-font"
+      - "ghostty"

@@ -1,0 +1,10 @@
+[".local/share/fzf-tab"]
+type = "archive"
+url = "https://github.com/Aloxaf/fzf-tab/archive/refs/tags/v1.2.0.tar.gz"
+exact = true
+stripComponents = 1
+
+[".local/share/fzf-tab-source"]
+type = "git-repo"
+url = "https://github.com/Freed-Wu/fzf-tab-source"
+exact = true
