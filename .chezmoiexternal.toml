@@ -8,3 +8,8 @@ stripComponents = 1
 type = "git-repo"
 url = "https://github.com/Freed-Wu/fzf-tab-source"
 exact = true
+
+[".nvm"]
+type = "git-repo"
+url = "https://github.com/nvm-sh/nvm"
+exact = true
