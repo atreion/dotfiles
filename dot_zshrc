@@ -1,106 +1,25 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# Activate Powerlevel10k Instant Prompt.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Load Powerlevel10k prompt
-source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+ZSH=~/.oh-my-zsh
+ZSH_CUSTOM=~/.config/zsh
+DISABLE_AUTO_UPDATE=true
+DISABLE_MAGIC_FUNCTIONS=true
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory 
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-
-
-LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43';
-FZF_TAB_GROUP_COLORS=( # default colors, see https://github.com/Aloxaf/fzf-tab/wiki/Configuration
-  $'\033[94m' $'\033[32m' $'\033[33m' $'\033[35m' $'\033[31m' $'\033[38;5;27m' $'\033[36m' \
-  $'\033[38;5;100m' $'\033[38;5;98m' $'\033[91m' $'\033[38;5;80m' $'\033[92m' \
-  $'\033[38;5;214m' $'\033[38;5;165m' $'\033[38;5;124m' $'\033[38;5;120m'
+ZSH_THEME="powerlevel10k/powerlevel10k"
+plugins=(
+  fzf
+  git
+  nvm
+  zoxide
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
-export LS_COLORS
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-export BAT_THEME=tokyonight_night
-export EZA_ICONS_AUTO=true
+zstyle ':omz:plugins:nvm' lazy yes
 
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':completion:*:git-checkout:*' sort false
-zstyle ':completion:*:descriptions' format '[%d]'
-zstyle ':fzf-tab:*' switch-group '<' '>'
-zstyle ':fzf-tab:*' group-colors $FZF_TAB_GROUP_COLORS
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $realpath'
-zstyle ':fzf-tab:sources' config-directory /a/directory
-
-bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-
-alias e=$EDITOR
-alias c='clear'
-alias ls='eza'
-alias l='eza --git-ignore'
-alias ll='eza --all --header --long'
-alias llm='eza --all --header --long --sort=modified'
-alias la='eza -lbhHigUmuSa'
-alias lx='eza -lbhHigUmuSa@'
-alias lt='eza --tree --icons=always'
-alias tree='eza --tree'
-alias g='git'
-alias gl='git log'
-alias gst='git status'
-alias gco='git checkout'
-alias gc='git commit'
-alias gp='git push'
-alias gu='git pull'
-alias gb='git branch'
-alias gd='git diff'
-alias grv='git remote -v'
-
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-
-FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-autoload -Uz compinit && compinit
-
-rfv() (
-  RELOAD='reload:rg --column --color=always --smart-case {q} || :'
-  OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
-            nvim {1} +{2}     # No selection. Open the current line in Neovim.
-          else
-            nvim +cw -q {+f}  # Build quickfix list for the selected items.
-          fi'
-  fzf --disabled --ansi --multi \
-    --bind "start:$RELOAD" --bind "change:$RELOAD" \
-    --bind "enter:become:$OPENER" \
-    --bind "ctrl-o:execute:$OPENER" \
-    --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
-    --delimiter : \
-    --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
-    --preview-window '~4,+{2}+4/3,<80(up)' \
-    --query "$*"
-  )
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-source ~/.local/share/fzf-tab/fzf-tab.plugin.zsh
-source ~/.local/share/fzf-tab-source/fzf-tab-source.plugin.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/oh-my-zsh.sh
+source ~/.p10k.zsh
