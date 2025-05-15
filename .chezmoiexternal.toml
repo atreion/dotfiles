@@ -18,8 +18,14 @@ type = "git-repo"
 url = "https://github.com/zsh-users/zsh-autosuggestions.git"
 exact = true
 
+[".config/zsh/plugins/zsh-nvm"]
+type = "git-repo"
+url = "https://github.com/lukechilds/zsh-nvm"
+exact = true
+
 [".config/zsh/themes/powerlevel10k"]
 type = "git-repo"
 url = "https://github.com/romkatv/powerlevel10k.git"
 clone.args = ["--depth=1"]
 exact = true
+

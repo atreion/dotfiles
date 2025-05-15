@@ -8,18 +8,29 @@ ZSH_CUSTOM=~/.config/zsh
 DISABLE_AUTO_UPDATE=true
 DISABLE_MAGIC_FUNCTIONS=true
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+ZOXIDE_CMD_OVERRIDE=cd
+
+export NVM_COMPLETION=true
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
+  brew
+  eza
   fzf
   git
   nvm
   zoxide
   zsh-autosuggestions
+  zsh-nvm
   zsh-syntax-highlighting
 )
 
+zstyle ':omz:*' aliases no
+zstyle ':omz:plugins:eza' aliases yes
+zstyle ':omz:plugins:eza' 'icons' yes
+zstyle ':omz:plugins:git' aliases yes
 zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' silent-autoload yes
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
 source ~/.p10k.zsh
