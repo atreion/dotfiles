@@ -1,8 +1,8 @@
 macos-titlebar-style = tabs
-font-family = MesloLGS Nerd Font Mono
+font-family = JetBrainsMono Nerd Font Mono
 font-size = 15
 mouse-hide-while-typing = true
-theme = dark:tokyonight-storm, light:tokyonight-day
+theme = dark:catppuccin-macchiato, light:catppuccin-latte
 confirm-close-surface = false
 window-padding-balance = true
 #font-feature = "-calt, -liga, -dlig"
