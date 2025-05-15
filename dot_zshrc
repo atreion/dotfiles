@@ -18,7 +18,11 @@ plugins=(
   eza
   fzf
   git
+  npm
   nvm
+  pm2
+  thefuck
+  yarn
   zoxide
   zsh-autosuggestions
   zsh-nvm
@@ -31,6 +35,10 @@ zstyle ':omz:plugins:eza' 'icons' yes
 zstyle ':omz:plugins:git' aliases yes
 zstyle ':omz:plugins:nvm' lazy yes
 zstyle ':omz:plugins:nvm' silent-autoload yes
+zstyle ':omz:plugins:pm2' aliases yes
+zstyle ':omz:plugins:yarn' aliases yes
+
+bindkey -e
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
 source ~/.p10k.zsh
