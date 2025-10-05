@@ -25,8 +25,8 @@ Your SSH config (`~/.ssh/config`) includes:
 
 ### Directory-based Configuration
 
-- `~/ws/`: Work account (auto-configured)
-- `~/proj/`: Personal account (auto-configured)
+- `~/work/`: Work account (auto-configured)
+- `~/personal/`: Personal account (auto-configured)
 
 ## Helper Scripts
 
@@ -81,19 +81,19 @@ clone-personal https://github.com/atreion/my-project.git
 
 ```bash
 # For work repositories in ~/ws/
-cd ~/ws/
+cd ~/work/
 git clone git@github-work:company/repo.git
 
 # For personal repositories in ~/proj/
-cd ~/proj/
+cd ~/personal/
 git clone git@github-personal:atreion/repo.git
 ```
 
 ## Directory Structure
 
 ```
-~/ws/                    # Work repositories (auto work config)
-~/proj/                  # Personal repositories (auto personal config)
+~/work/                    # Work repositories (auto work config)
+~/personal/                  # Personal repositories (auto personal config)
 ```
 
 ## GitHub CLI Usage
@@ -164,5 +164,5 @@ gh auth login --hostname github.com --git-protocol ssh --web
 
 1. Run `setup-github-accounts` to authenticate both accounts with GitHub CLI
 2. Test the setup by cloning repositories from both accounts
-3. Create the directory structure (`~/ws/`, `~/proj/`) for automatic configuration
+3. Create the directory structure (`~/work/`, `~/personal/`) for automatic configuration
 4. Use the helper scripts for easy account switching and repository management
