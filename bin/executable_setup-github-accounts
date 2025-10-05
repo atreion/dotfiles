@@ -1,0 +1,55 @@
+#!/bin/bash
+# Setup script for multiple GitHub accounts
+
+echo "🚀 Setting up multiple GitHub accounts..."
+echo "========================================"
+
+# Check if GitHub CLI is installed
+if ! command -v gh &> /dev/null; then
+    echo "❌ GitHub CLI is not installed. Please install it first:"
+    echo "   brew install gh"
+    exit 1
+fi
+
+echo ""
+echo "📋 Current SSH keys:"
+ssh-add -l
+
+echo ""
+echo "🔑 Setting up SSH keys in keychain..."
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519_atreion
+
+echo ""
+echo "🔐 GitHub CLI Authentication Setup"
+echo "=================================="
+echo ""
+echo "You need to authenticate both accounts with GitHub CLI."
+echo "This will open your browser for authentication."
+echo ""
+
+# Authenticate work account
+echo "1️⃣ Authenticating WORK account (david.drottson@pinmeto.com)..."
+echo "   - Use your work email: david.drottson@pinmeto.com"
+echo "   - Use SSH key: ~/.ssh/id_ed25519"
+gh auth login --hostname github.com --git-protocol ssh --web
+
+# Authenticate personal account
+echo ""
+echo "2️⃣ Authenticating PERSONAL account (atreion)..."
+echo "   - Use your personal email: 5829476+atreion@users.noreply.github.com"
+echo "   - Use SSH key: ~/.ssh/id_ed25519_atreion"
+gh auth login --hostname github.com --git-protocol ssh --web
+
+echo ""
+echo "✅ Setup complete!"
+echo ""
+echo "📝 Next steps:"
+echo "1. Test your setup with: git-status"
+echo "2. Switch accounts with: git-work or git-personal"
+echo "3. Clone repositories with: clone-work or clone-personal"
+echo ""
+echo "📁 Directory structure:"
+echo "   ~/ws/                    → Work repositories (auto-configured)"
+echo "   ~/personal/              → Personal repositories (auto-configured)"
+echo "   ~/projects/personal/     → Personal repositories (auto-configured)"

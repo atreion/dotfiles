@@ -1,0 +1,35 @@
+#!/bin/bash
+# Clone a repository using personal GitHub account
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <repository-url> [destination]"
+    echo "Example: $0 https://github.com/atreion/repo.git"
+    echo "Example: $0 atreion/repo"
+    exit 1
+fi
+
+REPO_URL="$1"
+DESTINATION="$2"
+
+# Convert short form to full URL if needed
+if [[ "$REPO_URL" != http* ]] && [[ "$REPO_URL" != git@* ]]; then
+    REPO_URL="https://github.com/$REPO_URL.git"
+fi
+
+# Convert HTTPS URL to SSH with personal host alias
+if [[ "$REPO_URL" == https://github.com/* ]]; then
+    REPO_NAME=$(echo "$REPO_URL" | sed 's|https://github.com/||' | sed 's|\.git$||')
+    REPO_URL="git@github-personal:$REPO_NAME.git"
+fi
+
+echo "🔧 Cloning with personal account..."
+echo "Repository: $REPO_URL"
+echo "💡 Tip: Consider cloning to ~/personal/ for automatic personal configuration"
+
+if [ -n "$DESTINATION" ]; then
+    git clone "$REPO_URL" "$DESTINATION"
+else
+    git clone "$REPO_URL"
+fi
+
+echo "✅ Repository cloned successfully"

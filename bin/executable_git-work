@@ -1,0 +1,23 @@
+#!/bin/bash
+# Switch to work GitHub account
+
+echo "Switching to work GitHub account (david.drottson@pinmeto.com)"
+
+# Set global Git config to work account
+git config --global user.name "David Drottson"
+git config --global user.email "david.drottson@pinmeto.com"
+
+# Set GitHub CLI to work account (if authenticated)
+if gh auth switch --user david.drottson@pinmeto.com 2>/dev/null; then
+    echo "✅ Switched GitHub CLI to work account"
+else
+    echo "⚠️  GitHub CLI work account not authenticated. Run 'gh auth login' to authenticate."
+fi
+
+echo "✅ Switched to work account"
+echo "Current Git user: $(git config --global user.name) <$(git config --global user.email)>"
+if gh auth status &>/dev/null; then
+    echo "Current GitHub CLI user: $(gh api user --jq .login 2>/dev/null || echo 'Not authenticated')"
+else
+    echo "Current GitHub CLI user: Not authenticated"
+fi

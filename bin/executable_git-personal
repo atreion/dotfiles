@@ -1,0 +1,23 @@
+#!/bin/bash
+# Switch to personal GitHub account
+
+echo "Switching to personal GitHub account (atreion)"
+
+# Set global Git config to personal account
+git config --global user.name "atreion"
+git config --global user.email "5829476+atreion@users.noreply.github.com"
+
+# Set GitHub CLI to personal account
+if gh auth switch --user atreion 2>/dev/null; then
+    echo "✅ Switched GitHub CLI to personal account"
+else
+    echo "⚠️  GitHub CLI personal account not authenticated. Run 'gh auth login' to authenticate."
+fi
+
+echo "✅ Switched to personal account"
+echo "Current Git user: $(git config --global user.name) <$(git config --global user.email)>"
+if gh auth status &>/dev/null; then
+    echo "Current GitHub CLI user: $(gh api user --jq .login 2>/dev/null || echo 'Not authenticated')"
+else
+    echo "Current GitHub CLI user: Not authenticated"
+fi

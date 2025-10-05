@@ -1,0 +1,40 @@
+#!/bin/bash
+# Show current Git and GitHub account status
+
+echo "🔍 Current Git and GitHub Account Status"
+echo "========================================"
+
+echo ""
+echo "📧 Git Configuration:"
+echo "  Name: $(git config user.name)"
+echo "  Email: $(git config user.email)"
+
+echo ""
+echo "🐙 GitHub CLI:"
+if command -v gh &> /dev/null; then
+    USER=$(gh api user --jq .login 2>/dev/null)
+    if [ -n "$USER" ]; then
+        echo "  User: $USER"
+        echo "  Status: Authenticated"
+    else
+        echo "  Status: Not authenticated"
+    fi
+else
+    echo "  Status: GitHub CLI not installed"
+fi
+
+echo ""
+echo "🔑 SSH Keys:"
+ssh-add -l 2>/dev/null | while read line; do
+    echo "  $line"
+done
+
+echo ""
+echo "📁 Directory-based Git Config:"
+if [[ "$PWD" == "$HOME/work"* ]]; then
+    echo "  Current directory uses WORK configuration"
+elif [[ "$PWD" == "$HOME/personal"* ]] || [[ "$PWD" == "$HOME/.config"* ]] || [[ "$PWD" == "$HOME/.local/share/chezmoi"* ]]; then
+    echo "  Current directory uses PERSONAL configuration"
+else
+    echo "  Current directory uses GLOBAL configuration"
+fi
