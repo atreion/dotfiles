@@ -1,0 +1,11 @@
+github.com:
+    git_protocol: ssh
+    users:
+        david.drottson@pinmeto.com:
+            oauth_token:
+            git_protocol: ssh
+        atreion:
+            oauth_token:
+            git_protocol: ssh
+    user: atreion
+    oauth_token:
