@@ -1,0 +1,19 @@
+[user]
+  name = David Drottson
+  email = david.drottson@pinmeto.com
+
+[core]
+  sshCommand = ssh -o IdentitiesOnly=yes
+
+[credential]
+  helper = osxkeychain
+
+[includeIf "gitdir:~/work/"]
+  path = ~/.config/git/gitconfig-work
+
+[includeIf "gitdir:~/personal/"]
+  path = ~/.config/git/gitconfig-personal
+
+[includeIf "gitdir:~/.config/"]
+  path = ~/.config/git/gitconfig-personal
+

@@ -1,0 +1,9 @@
+[user]
+  name = David Drottson
+  email = david.drottson@pinmeto.com
+
+[core]
+  sshCommand = ssh -o IdentitiesOnly=yes -i ~/.ssh/id_ed25519
+
+[url "git@github-work:"]
+  insteadOf = git@github.com:

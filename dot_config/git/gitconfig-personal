@@ -1,0 +1,10 @@
+[user]
+  name = atreion
+  email = 5829476+atreion@users.noreply.github.com
+
+[core]
+  sshCommand = ssh -o IdentitiesOnly=yes -i ~/.ssh/id_ed25519_atreion
+
+[url "git@github-personal:"]
+  insteadOf = git@github.com:
+
