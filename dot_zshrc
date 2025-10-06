@@ -40,5 +40,7 @@ zstyle ':omz:plugins:yarn' aliases yes
 
 bindkey -e
 
+export PATH=~/bin:$PATH
+
 source ~/.oh-my-zsh/oh-my-zsh.sh
 source ~/.p10k.zsh
