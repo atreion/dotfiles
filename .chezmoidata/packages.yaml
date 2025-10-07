@@ -7,6 +7,7 @@ packages:
       - "fd"
       - "fzf"
       - "git"
+      - "lazygit"
       - "nvim"
       - "powerlevel10k"
       - "ripgrep"
