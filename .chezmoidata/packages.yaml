@@ -12,6 +12,7 @@ packages:
       - "ripgrep"
       - "thefuck"
       - "tmux"
+      - "tree-sitter-cli"
       - "zoxide"
       - "zsh-autosuggestions"
       - "zsh-completions"
