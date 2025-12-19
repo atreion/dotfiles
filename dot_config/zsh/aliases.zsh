@@ -6,6 +6,9 @@ alias vz='NVIM_APPNAME=nvim-lazyvim nvim' # LazyVim
 alias vc='NVIM_APPNAME=nvim-nvchad nvim' # NvChad
 alias vm='NVIM_APPNAME=nvim-mini nvim'
 
+alias lazygit='lazygit --use-config-file="$HOME/.config/lazygit/themes-mergable/macchiato/blue.yml"'
+alias lg=lazygit
+
 vv() {
   # Assumes all configs exist in directories named ~/.config/nvim-*
   local config=$(fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)

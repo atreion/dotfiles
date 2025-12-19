@@ -1,6 +1,7 @@
-font-family = JetBrainsMono Nerd Font Mono
-theme = "tokyonight_moon"
+confirm-close-surface = false
+font-family = JetBrainsMono Nerd Font
+font-feature = -calt, -liga, -dlig
 font-size = 15
 mouse-hide-while-typing = true
-confirm-close-surface = false
+theme = catppuccin-macchiato
 window-padding-balance = true
