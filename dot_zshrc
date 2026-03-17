@@ -50,7 +50,7 @@ source "$ZSH/oh-my-zsh.sh"
 # theme + prompt (after oh-my-zsh so zstyle completion works)
 source "$ZSH_CUSTOM/theme/tokyonight-moon.zsh"
 
-# zoxide (after oh-my-zsh, before p10k)
-eval "$(zoxide init zsh --cmd cd)"
-
 source "$ZSH_CUSTOM/p10k.zsh"
+
+# zoxide (must be last)
+eval "$(zoxide init zsh --cmd cd)"
