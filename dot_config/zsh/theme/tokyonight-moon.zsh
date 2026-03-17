@@ -47,24 +47,24 @@ export FZF_DEFAULT_OPTS=" \
   --color=spinner:$TN_PINK \
 "
 
-# zsh completion colors
+# zsh completion colors -- matched to eza theme.yml
 # Hard-coded RGB values -- zstyle list-colors does not support variable
-# interpolation in ANSI escape sequences. Keep in sync with palette above.
-#   di=blue(#589ed7) ln=cyan(#86e1fc) so=green(#c3e88d) pi=yellow(#ffc777)
-#   ex=magenta(#c099ff) bd/cd=teal(#4fd6be) su/sg=red on dark bg
-#   tw=green on dark bg ow=blue on blue bg
+# interpolation in ANSI escape sequences. Keep in sync with eza theme.yml.
+#   di=directory(#82aaff) ln=symlink(#65bcff) so=socket(#444a73) pi=pipe(#444a73)
+#   ex=executable(#c3e88d) bd/cd=device(#ffc777) su/sg=special(#fca7ea) on dark bg
+#   tw=mount_point(#b4f9f8) on dark bg ow=directory(#82aaff) on blue bg
 zstyle ':completion:*' list-colors \
-  'di=38;2;88;158;215' \
-  'ln=38;2;134;225;252' \
-  'so=38;2;195;232;141' \
-  'pi=38;2;255;199;119' \
-  'ex=38;2;192;153;255' \
-  'bd=38;2;79;214;190' \
-  'cd=38;2;79;214;190' \
-  'su=38;2;255;117;127;48;2;30;32;48' \
-  'sg=38;2;255;117;127;48;2;30;32;48' \
-  'tw=38;2;195;232;141;48;2;30;32;48' \
-  'ow=38;2;88;158;215;48;2;45;63;118'
+  'di=38;2;130;170;255' \
+  'ln=38;2;101;188;255' \
+  'so=38;2;68;74;115' \
+  'pi=38;2;68;74;115' \
+  'ex=38;2;195;232;141' \
+  'bd=38;2;255;199;119' \
+  'cd=38;2;255;199;119' \
+  'su=38;2;252;167;234;48;2;30;32;48' \
+  'sg=38;2;252;167;234;48;2;30;32;48' \
+  'tw=38;2;180;249;248;48;2;30;32;48' \
+  'ow=38;2;130;170;255;48;2;45;63;118'
 
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
