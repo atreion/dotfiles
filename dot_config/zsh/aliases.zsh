@@ -1,15 +1,8 @@
 alias e="${EDITOR}"
 alias tree='eza --tree --icons=auto'
+alias cls='clear'
 
-alias vim='nvim' # default Neovim config
-# alias vz='NVIM_APPNAME=nvim-lazyvim nvim' # LazyVim
-# alias vc='NVIM_APPNAME=nvim-nvchad nvim' # NvChad
-# alias vm='NVIM_APPNAME=nvim-mini nvim' # Custom minimal nvim
-#
-# alias gq='git add . && git commit -m "quicksave"'
-# alias glos='git log --oneline --decorate -5'
-
-alias lazygit='lazygit --use-config-file="$HOME/.config/lazygit/themes-mergable/macchiato/blue.yml"'
+alias lazygit='lazygit --use-config-file="$XDG_CONFIG_HOME/lazygit/themes-mergable/tokyonight-moon.yml"'
 alias lg=lazygit
 
 vv() {
