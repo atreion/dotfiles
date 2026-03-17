@@ -28,7 +28,7 @@ esac
 export PATH="$HOME/.local/bin:$PATH"
 
 #  oh-my-zsh plugins
-plugins=(brew eza fzf git npm pm2 yarn zoxide zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(brew eza fzf git npm pm2 yarn zsh-autosuggestions zsh-syntax-highlighting)
 zstyle ':omz:*' aliases no
 zstyle ':omz:plugins:eza' aliases yes
 zstyle ':omz:plugins:eza' 'icons' yes
@@ -49,4 +49,8 @@ source "$ZSH/oh-my-zsh.sh"
 
 # theme + prompt (after oh-my-zsh so zstyle completion works)
 source "$ZSH_CUSTOM/theme/tokyonight-moon.zsh"
+
+# zoxide (after oh-my-zsh, before p10k)
+eval "$(zoxide init zsh --cmd cd)"
+
 source "$ZSH_CUSTOM/p10k.zsh"
