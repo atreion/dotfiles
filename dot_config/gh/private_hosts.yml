@@ -1,5 +1,5 @@
 github.com:
-    git_protocol: ssh
+    git_protocol: https
     users:
         david.drottson@pinmeto.com:
             oauth_token:
@@ -7,5 +7,5 @@ github.com:
         atreion:
             oauth_token:
             git_protocol: ssh
-    user: atreion
-    oauth_token:
+        david-drottson:
+    user: david-drottson

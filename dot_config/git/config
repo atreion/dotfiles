@@ -17,3 +17,6 @@
 [includeIf "gitdir:~/.config/"]
   path = ~/.config/git/gitconfig-personal
 
+
+[core]
+  pager = less -FRX
