@@ -49,7 +49,19 @@ export FZF_DEFAULT_OPTS=" \
 
 # LS_COLORS and zsh completion colors via vivid
 export LS_COLORS="$(vivid generate tokyonight-moon)"
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Reorder LS_COLORS for zsh: specific filename patterns must come before
+# extension patterns because zsh list-colors uses first-match-wins.
+typeset -a _lsc=( ${(s.:.)LS_COLORS} )
+typeset -a _lsc_specific=() _lsc_rest=()
+for _e in "${_lsc[@]}"; do
+  case ${_e%%=*} in
+    \*?*.*|*[A-Z]*) _lsc_specific+=("$_e") ;;  # specific filenames before extension patterns
+    *) _lsc_rest+=("$_e") ;;
+  esac
+done
+zstyle ':completion:*' list-colors "${_lsc_specific[@]}" "${_lsc_rest[@]}"
+unset _lsc _lsc_specific _lsc_rest _e
 
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
