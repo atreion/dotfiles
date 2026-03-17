@@ -47,23 +47,9 @@ export FZF_DEFAULT_OPTS=" \
   --color=spinner:$TN_PINK \
 "
 
-# zsh completion colors
-#   di=blue(#27a1b9) ln=cyan(#7dcfff) so=green(#9ece6a) pi=yellow(#e0af68)
-#   ex=magenta(#bb9af7) bd/cd=teal(#1abc9c) su/sg=red on dark bg
-#   tw=green on dark bg ow=blue on blue bg
-zstyle ':completion:*' list-colors \
-  'di=38;2;39;161;185' \
-  'ln=38;2;125;207;255' \
-  'so=38;2;158;206;106' \
-  'pi=38;2;224;175;104' \
-  'ex=38;2;187;154;247' \
-  'bd=38;2;26;188;156' \
-  'cd=38;2;26;188;156' \
-  'su=38;2;247;118;142;48;2;22;22;30' \
-  'sg=38;2;247;118;142;48;2;22;22;30' \
-  'tw=38;2;158;206;106;48;2;22;22;30' \
-  'ow=38;2;39;161;185;48;2;40;52;87'
+# LS_COLORS and zsh completion colors via vivid
+export LS_COLORS="$(vivid generate tokyonight-night)"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
-export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"

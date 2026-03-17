@@ -47,25 +47,9 @@ export FZF_DEFAULT_OPTS=" \
   --color=spinner:$TN_PINK \
 "
 
-# zsh completion colors -- matched to eza theme.yml
-# Hard-coded RGB values -- zstyle list-colors does not support variable
-# interpolation in ANSI escape sequences. Keep in sync with eza theme.yml.
-#   di=directory(#82aaff) ln=symlink(#65bcff) so=socket(#444a73) pi=pipe(#444a73)
-#   ex=executable(#c3e88d) bd/cd=device(#ffc777) su/sg=special(#fca7ea) on dark bg
-#   tw=mount_point(#b4f9f8) on dark bg ow=directory(#82aaff) on blue bg
-zstyle ':completion:*' list-colors \
-  'di=38;2;130;170;255' \
-  'ln=38;2;101;188;255' \
-  'so=38;2;68;74;115' \
-  'pi=38;2;68;74;115' \
-  'ex=38;2;195;232;141' \
-  'bd=38;2;255;199;119' \
-  'cd=38;2;255;199;119' \
-  'su=38;2;252;167;234;48;2;30;32;48' \
-  'sg=38;2;252;167;234;48;2;30;32;48' \
-  'tw=38;2;180;249;248;48;2;30;32;48' \
-  'ow=38;2;130;170;255;48;2;45;63;118'
+# LS_COLORS and zsh completion colors via vivid
+export LS_COLORS="$(vivid generate tokyonight-moon)"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
-export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
