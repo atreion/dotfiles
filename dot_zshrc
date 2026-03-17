@@ -52,5 +52,7 @@ source "$ZSH_CUSTOM/theme/tokyonight-moon.zsh"
 
 source "$ZSH_CUSTOM/p10k.zsh"
 
+eval "$(thefuck --alias)"
+
 # zoxide (must be last)
 eval "$(zoxide init zsh --cmd cd)"
