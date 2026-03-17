@@ -15,6 +15,7 @@ packages:
       - "thefuck"
       - "tmux"
       - "tree-sitter-cli"
+      - "vivid"
       - "zoxide"
       - "zsh-autosuggestions"
       - "zsh-completions"
