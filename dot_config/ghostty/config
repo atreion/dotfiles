@@ -5,3 +5,5 @@ mouse-hide-while-typing = true
 window-padding-balance = true
 keybind = shift+enter=text:\x1b\r
 split-divider-color = #444a73
+unfocused-split-fill = #1a1b26
+unfocused-split-opacity = 0.7
