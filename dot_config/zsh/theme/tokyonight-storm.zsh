@@ -49,6 +49,7 @@ export FZF_DEFAULT_OPTS=" \
 
 # LS_COLORS and zsh completion colors via vivid
 export LS_COLORS="$(vivid generate tokyonight-storm)"
+export EZA_COLORS=""
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 export CLICOLOR=1
